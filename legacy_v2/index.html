@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleSense AI | Premium Personal Styling</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-wrapper">
+        <img src="images/background.png" alt="Fashion Background" class="background-image">
+        <div class="background-overlay"></div>
+    </div>
+
+    <main class="app-container">
+        <header class="app-header">
+            <h1>StyleSense <span>AI</span></h1>
+            <p>Creating your perfect look with artificial intelligence.</p>
+        </header>
+
+        <!-- Input Section -->
+        <section id="input-section" class="glass-panel">
+            <form id="style-form">
+                <div class="input-grid">
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <div class="select-wrapper">
+                            <select id="gender" name="gender" required>
+                                <option value="" disabled selected>Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="occasion">Occasion</label>
+                        <div class="select-wrapper">
+                            <select id="occasion" name="occasion" required>
+                                <option value="" disabled selected>Select Occasion</option>
+                                <option value="casual">Casual / Day Out</option>
+                                <option value="office">Office / Professional</option>
+                                <option value="party">Party / Evening</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="body-shape">Body Shape</label>
+                        <div class="select-wrapper">
+                            <select id="body-shape" name="body-shape" required>
+                                <option value="" disabled selected>Select Shape</option>
+                                <option value="hourglass">Hourglass</option>
+                                <option value="pear">Pear</option>
+                                <option value="apple">Apple</option>
+                                <option value="rectangle">Rectangle</option>
+                                <option value="inverted-triangle">Inverted Triangle</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="climate">Climate</label>
+                        <div class="select-wrapper">
+                            <select id="climate" name="climate" required>
+                                <option value="" disabled selected>Select Climate</option>
+                                <option value="sunny">Sunny / Warm</option>
+                                <option value="cold">Cold / Winter</option>
+                                <option value="rainy">Rainy / Overcast</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="cta-button">Generate My Recommendations</button>
+            </form>
+        </section>
+
+        <!-- Results Section -->
+        <section id="result-section" class="glass-panel hidden">
+            <header style="text-align: center; margin-bottom: 2rem;">
+                <h2 style="color: var(--text-main); font-size: 2rem;">Your Created Looks</h2>
+                <p style="color: var(--text-muted);" id="result-context">Personalized logic applied.</p>
+            </header>
+
+            <div class="results-grid" id="results-grid">
+                <!-- Dynamically populated by JS -->
+            </div>
+
+            <div style="text-align: center;">
+                <button id="reset-btn" class="secondary-button">Start New Session</button>
+            </div>
+        </section>
+
+        <!-- Details Modal -->
+        <div id="detail-modal" class="modal-overlay">
+            <div class="modal-content">
+                <button class="close-modal-btn">&times;</button>
+
+                <div class="modal-image-side">
+                    <img id="modal-img" src="" alt="Detail View">
+                </div>
+
+                <div class="modal-details-side">
+                    <div class="modal-title-section">
+                        <h2 id="modal-title">Outfit Name</h2>
+                        <p id="modal-desc" style="color: var(--accent-cyan);"></p>
+                    </div>
+
+                    <div class="component-breakdown">
+                        <h3>Breakdown</h3>
+                        <div id="modal-components">
+                            <!-- Populated via JS -->
+                        </div>
+                    </div>
+
+                    <div class="variations-section">
+                        <h3>Style Swaps</h3>
+                        <div class="variations-grid" id="modal-variations">
+                            <!-- Populated via JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

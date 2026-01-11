@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleSense AI | Personal Stylist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Dynamic Background Layer -->
+        <div class="hero-background" id="hero-bg"></div>
+        <div class="overlay-gradient"></div>
+
+        <!-- Main Content Area -->
+        <main class="main-interface">
+            <header class="app-header">
+                <div class="logo">
+                    <i class="fa-solid fa-gem"></i> StyleSense<span class="ai-badge">AI</span>
+                </div>
+                <p class="tagline">Your Personal Intelligent Stylist</p>
+            </header>
+
+            <!-- Input Form Section -->
+            <section class="input-panel glass-panel" id="input-section">
+                <form id="stylist-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-venus-mars"></i> Gender</label>
+                            <div class="select-wrapper">
+                                <select name="gender" id="gender" required>
+                                    <option value="" disabled selected>Select Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-champagne-glasses"></i> Occasion</label>
+                            <div class="select-wrapper">
+                                <select name="occasion" id="occasion" required>
+                                    <option value="" disabled selected>Select Occasion</option>
+                                    <option value="casual">Casual Outing</option>
+                                    <option value="office">Office / Professional</option>
+                                    <option value="party">Party / Event</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-shapes"></i> Body Shape</label>
+                            <div class="select-wrapper">
+                                <select name="shape" id="shape" required>
+                                    <option value="" disabled selected>Select Body Shape</option>
+                                    <option value="hourglass">Hourglass</option>
+                                    <option value="pear">Pear</option>
+                                    <option value="apple">Apple</option>
+                                    <option value="rectangle">Rectangle</option>
+                                    <option value="inverted-triangle">Inverted Triangle</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-cloud-sun"></i> Climate</label>
+                            <div class="select-wrapper">
+                                <select name="climate" id="climate" required>
+                                    <option value="" disabled selected>Select Climate</option>
+                                    <option value="sunny">Sunny / Warm</option>
+                                    <option value="cold">Cold / Winter</option>
+                                    <option value="rainy">Rainy / Overcast</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="generate-btn">
+                        <span class="btn-text">Create My Look</span>
+                        <span class="btn-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                    </button>
+                </form>
+            </section>
+
+            <!-- Results Section (Initially Hidden) -->
+            <section class="results-section hidden" id="results-section">
+                <div class="section-header">
+                    <h2>Created Recommendations</h2>
+                    <button class="reset-btn" id="reset-btn"><i class="fa-solid fa-arrow-left"></i> New Search</button>
+                </div>
+                <div class="outfit-grid" id="outfit-grid">
+                    <!-- Dynamic Recommendation Cards will go here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Detailed View Modal -->
+    <div class="modal-overlay hidden" id="outfit-modal">
+        <div class="modal-content glass-panel" id="modal-content">
+            <button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-body" id="modal-body">
+                <!-- Detailed content injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
